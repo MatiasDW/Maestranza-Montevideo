@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* LOGO */}
         <div className="flex-shrink-0">
           <a href="#hero" className="flex items-center py-2 h-14">
-            <svg viewBox="0 0 240 80" className={`h-12 w-auto transition-transform ${isScrolled ? 'scale-90' : 'scale-100'}`} fill="none">
+            <svg viewBox="0 0 240 80" className={`h-9 sm:h-12 w-auto transition-transform ${isScrolled ? 'scale-90' : 'scale-100'}`} fill="none">
               {/* Shield/Banner Background */}
               <path d="M 0 0 L 240 0 L 240 55 L 120 72 L 0 55 Z" fill="#1a4375" />
               {/* Inner Chevron Line */}

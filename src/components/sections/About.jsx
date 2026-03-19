@@ -22,7 +22,7 @@ const About = () => {
             className="space-y-6"
           >
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">Quiénes Somos</span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
               Líderes en Soluciones para el <span className="text-secondary">Transporte y la Construcción</span>
             </h2>
             <p className="text-gray-600 leading-relaxed">

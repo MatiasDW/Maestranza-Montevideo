@@ -29,7 +29,7 @@ const Equipment = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
           >
             Maquinaria de <span className="text-secondary">Vanguardia</span>
           </motion.h2>

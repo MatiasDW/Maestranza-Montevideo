@@ -40,7 +40,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
           >
             Servicios <span className="text-secondary">Integrales</span> Multimarca
           </motion.h2>
@@ -53,7 +53,7 @@ const Services = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch h-full">
           
           {/* Left: Interactive List */}
-          <div className="lg:col-span-5 flex flex-col space-y-3 lg:h-[480px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
+          <div className="lg:col-span-5 flex flex-col space-y-3 lg:h-[480px] lg:overflow-y-auto pr-0 lg:pr-2 scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
             {serviceList.map((service, index) => (
               <motion.div
                 key={index}
@@ -87,7 +87,7 @@ const Services = () => {
           </div>
 
           {/* Right: Smooth Image Transitioning Area */}
-          <div className="lg:col-span-7 relative h-64 lg:h-[480px] rounded-3xl overflow-hidden shadow-xl border border-gray-100 aspect-video lg:aspect-auto">
+          <div className="lg:col-span-7 relative h-56 sm:h-72 lg:h-[480px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-gray-100">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}

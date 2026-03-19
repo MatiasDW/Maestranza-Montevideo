@@ -52,7 +52,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
           >
             Hablemos de tu <span className="text-secondary">Próximo Proyecto</span>
           </motion.h2>
@@ -112,7 +112,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 bg-white border border-gray-100 p-8 rounded-2xl shadow-xl relative"
+            className="lg:col-span-7 bg-white border border-gray-100 p-5 sm:p-8 rounded-2xl shadow-xl relative"
           >
             {/* Robust Toast Alert Implementation */}
             <AnimatePresence>
