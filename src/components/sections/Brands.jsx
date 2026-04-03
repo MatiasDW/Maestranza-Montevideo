@@ -11,6 +11,7 @@ import andinaLogo from '../../assets/logos/andina.png';
 import kdmLogo from '../../assets/logos/kdm.png';
 import dimensionLogo from '../../assets/logos/dimension.png';
 import walmartLogo from '../../assets/logos/walmart.svg';
+import otrosClientesLogo from '../../assets/logos/otros-clientes.svg';
 
 const Brands = () => {
   const insuranceClients = [
@@ -29,7 +30,7 @@ const Brands = () => {
     { name: 'KDM', logo: kdmLogo, logoAlt: 'Logo KDM' },
     { name: 'Dimensión', logo: dimensionLogo, logoAlt: 'Logo Dimensión' },
     { name: 'LTS Walmart', logo: walmartLogo, logoAlt: 'Logo Walmart' },
-    { name: 'Entre otros', logo: null, logoAlt: '' },
+    { name: 'Entre otros', logo: otrosClientesLogo, logoAlt: 'Red de clientes entre otros' },
   ];
 
   const insuranceTrack = [...insuranceClients, ...insuranceClients, ...insuranceClients];
@@ -117,19 +118,13 @@ const Brands = () => {
                 className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
-                  {client.logo ? (
-                    <div className="h-12 w-24 rounded-xl bg-white border border-gray-200 flex items-center justify-center px-2">
-                      <img
-                        src={client.logo}
-                        alt={client.logoAlt}
-                        className="max-h-8 w-full object-contain"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-12 w-24 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center">
-                      <span className="text-gray-600 font-bold text-lg">+</span>
-                    </div>
-                  )}
+                  <div className="h-12 w-24 rounded-xl bg-white border border-gray-200 flex items-center justify-center px-2">
+                    <img
+                      src={client.logo}
+                      alt={client.logoAlt}
+                      className="max-h-8 w-full object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-bold text-slate-800 text-sm">{client.name}</h3>
                     <p className="text-[11px] uppercase tracking-wider text-secondary font-semibold">
