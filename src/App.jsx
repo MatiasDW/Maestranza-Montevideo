@@ -87,17 +87,18 @@ function App() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"
-          className="h-12 w-12 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-lg flex items-center justify-center transition-colors"
+          className="relative h-12 w-12 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-lg flex items-center justify-center transition-colors"
           aria-label="Contáctenos por WhatsApp"
           title="Contáctenos por WhatsApp"
         >
+          <span className="absolute -inset-1 rounded-full border-2 border-green-400/40 animate-ping pointer-events-none" />
           <MessageCircle size={22} />
         </a>
         <a
           href={INSTAGRAM_URL}
           target="_blank"
           rel="noreferrer"
-          className="h-12 w-12 rounded-full bg-white hover:bg-gray-100 text-primary border border-gray-200 shadow-lg flex items-center justify-center transition-colors"
+          className="h-12 w-12 rounded-full bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all"
           aria-label="Ir a Instagram"
           title="Ir a Instagram"
         >
@@ -116,9 +117,12 @@ function App() {
             rel="noreferrer"
             className="inline-flex items-center gap-1 mt-3 text-blue-200 hover:text-white transition-colors"
           >
-            <Instagram size={14} />
+            <span className="h-5 w-5 rounded-full bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] text-white inline-flex items-center justify-center">
+              <Instagram size={12} />
+            </span>
             Instagram
           </a>
+          <p className="text-xs mt-3 text-blue-200/80">Creado por Matias Davila</p>
         </div>
       </footer>
     </div>

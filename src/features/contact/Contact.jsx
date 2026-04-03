@@ -117,7 +117,7 @@ const Contact = () => {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white hover:bg-gray-50 text-slate-800 border border-gray-200 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-colors"
+                className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white border border-white/20 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-all"
               >
                 <Instagram size={18} />
                 Ir a Instagram

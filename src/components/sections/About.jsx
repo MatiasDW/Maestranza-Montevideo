@@ -5,7 +5,7 @@ const About = () => {
   const stats = [
     { icon: <Clock size={40} className="text-secondary" />, value: '15+', label: 'Años de Experiencia' },
     { icon: <Box size={40} className="text-secondary" />, value: '13.000', label: 'Metros Cuadrados de Infraestructura' },
-    { icon: <ShieldCheck size={40} className="text-secondary" />, value: 'ISO 9001:2008', label: 'Gestión de Calidad Certificada' },
+    { icon: <ShieldCheck size={40} className="text-secondary" />, value: 'ISO 9001:2015', label: 'Gestión de Calidad Certificada' },
   ];
 
   return (
@@ -30,12 +30,26 @@ const About = () => {
               Nuestra vasta trayectoria nos permite abordar proyectos de reparación y fabricación con máxima seguridad y eficiencia.
             </p>
             
-            {/* ISO Badge */}
-            <div className="flex items-center gap-4 bg-primary/5 p-4 rounded-xl border border-primary/10 max-w-md">
-              <Award size={48} className="text-secondary flex-shrink-0" />
-              <div>
-                <h4 className="font-bold text-lg text-primary">Certificación ISO 9001:2008</h4>
-                <p className="text-sm text-gray-500">Garantía de calidad en cada proceso de manufactura y servicio de reparación.</p>
+            {/* ISO Certification Badge */}
+            <div className="bg-white border border-primary/15 rounded-2xl shadow-sm p-4 sm:p-5 max-w-xl">
+              <div className="flex items-center gap-4">
+                <div className="h-14 w-14 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Award size={30} className="text-secondary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-primary">Certificación ISO 9001:2015</h4>
+                  <p className="text-sm text-gray-500">Gestión de calidad para procesos de manufactura y servicios de reparación.</p>
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="sm:col-span-2 bg-primary/5 border border-primary/10 rounded-xl px-3 py-2">
+                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">Entidad certificadora</p>
+                  <p className="text-sm text-gray-600 mt-0.5">Logo oficial pendiente de incorporación</p>
+                </div>
+                <div className="h-16 rounded-xl border border-dashed border-primary/30 bg-white flex items-center justify-center">
+                  <span className="text-xs text-primary/80 font-semibold">Logo aquí</span>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -5,6 +5,7 @@ import { WHATSAPP_URL } from '../../config/contactLinks';
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden" style={{ backgroundImage: "linear-gradient(rgba(10,30,55,0.8), rgba(10,30,55,0.9)), url('https://images.unsplash.com/photo-1590402444527-0838e121703e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')" }}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.14),transparent_35%),radial-gradient(circle_at_80%_25%,rgba(34,197,94,0.14),transparent_32%)]" />
       
       <div className="max-w-5xl mx-auto px-4 text-center z-10">
         <motion.div
@@ -36,6 +37,21 @@ const Hero = () => {
             Soluciones integrales en Mecánica, Hidráulica y Estructuras para el Transporte y la Construcción. Calidad certificada ISO 9001.
           </p>
 
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-3xl mt-2">
+            <div className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 backdrop-blur-sm">
+              <p className="text-white font-bold text-sm">+15 años</p>
+              <p className="text-gray-300 text-xs mt-0.5">Experiencia técnica</p>
+            </div>
+            <div className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 backdrop-blur-sm">
+              <p className="text-white font-bold text-sm">Multimarca</p>
+              <p className="text-gray-300 text-xs mt-0.5">Camiones y semirremolques</p>
+            </div>
+            <div className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 backdrop-blur-sm">
+              <p className="text-white font-bold text-sm">Atención rápida</p>
+              <p className="text-gray-300 text-xs mt-0.5">Cotización por WSP</p>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <motion.a
               href="#contact"
@@ -56,6 +72,10 @@ const Hero = () => {
               Contáctenos por WSP <MessageCircle size={20} />
             </motion.a>
           </div>
+
+          <p className="text-xs text-gray-400 mt-3">
+            Cobertura en Santiago y atención a empresas y particulares.
+          </p>
         </motion.div>
       </div>
 

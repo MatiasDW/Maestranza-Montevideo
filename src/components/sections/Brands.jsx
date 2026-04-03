@@ -62,7 +62,7 @@ const Brands = () => {
       </div>
 
       <div className="mt-12 space-y-6">
-        <div>
+        <div className="relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
             <p className="text-sm uppercase tracking-wider font-semibold text-primary">
               Compañías de seguros
@@ -71,12 +71,12 @@ const Brands = () => {
           <motion.div
             animate={{ x: [0, '-50%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
-            className="flex gap-4 w-max px-4"
+            className="flex gap-4 w-max px-4 relative"
           >
             {insuranceTrack.map((client, index) => (
               <article
                 key={`${client.name}-${index}`}
-                className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0"
+                className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-24 rounded-xl bg-white border border-gray-200 flex items-center justify-center px-2">
@@ -96,9 +96,11 @@ const Brands = () => {
               </article>
             ))}
           </motion.div>
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-gray-50 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-gray-50 to-transparent" />
         </div>
 
-        <div>
+        <div className="relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
             <p className="text-sm uppercase tracking-wider font-semibold text-primary">
               Clientes particulares
@@ -112,7 +114,7 @@ const Brands = () => {
             {privateTrack.map((client, index) => (
               <article
                 key={`${client.name}-${index}`}
-                className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0"
+                className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
                   {client.logo ? (
@@ -138,6 +140,8 @@ const Brands = () => {
               </article>
             ))}
           </motion.div>
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-gray-50 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-gray-50 to-transparent" />
         </div>
       </div>
     </section>

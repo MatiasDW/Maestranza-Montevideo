@@ -77,7 +77,7 @@ const Navbar = () => {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
-            className="bg-white/90 hover:bg-white text-primary border border-gray-200 p-2.5 rounded-md shadow-md transition-colors"
+            className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white p-2.5 rounded-md shadow-md transition-all border border-white/20"
             aria-label="Visítanos en Instagram"
             title="Visítanos en Instagram"
           >
@@ -139,7 +139,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="bg-gray-100 hover:bg-gray-200 text-slate-800 text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2 border border-gray-200"
+                  className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2 border border-white/20"
                 >
                   <Instagram size={18} />
                   Instagram
