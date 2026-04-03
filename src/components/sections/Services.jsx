@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wrench, Truck, Building, Paintbrush, Cog } from 'lucide-react';
-import plegadoraImg from '../../assets/plegadora.png';
+import guillotinaImg from '../../assets/guillotina.png';
 import cabinaImg from '../../assets/cabina.png';
 import hidraulicaImg from '../../assets/hidraulica.png';
 import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
@@ -11,11 +11,11 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const serviceList = [
-    { icon: <Paintbrush size={26} />, title: 'Desabolladura y Pintura', description: 'Recuperación de superficies y terminaciones automotrices con estándares profesionales.', img: cabinaImg },
-    { icon: <Building size={26} />, title: 'Fabricación de carrocerías', description: 'Diseño y fabricación de carrocerías para distintos tipos de operación y carga.', img: plegadoraImg },
-    { icon: <Truck size={26} />, title: 'Reparación de semirremolques', description: 'Intervención estructural y funcional en semirremolques de transporte.', img: semitrailerRepairImg },
-    { icon: <Wrench size={26} />, title: 'Reparación de camiones', description: 'Reparaciones integrales para mantener continuidad operativa de flotas y unidades.', img: truckRepairImg },
-    { icon: <Cog size={26} />, title: 'Hidráulica, mecánica y neumática', description: 'Diagnóstico y reparación de sistemas hidráulicos, mecánicos y neumáticos.', img: hidraulicaImg },
+    { icon: <Paintbrush size={26} />, title: 'Desabolladura y Pintura', description: 'Recuperación de superficies y terminaciones automotrices con estándares profesionales.', img: cabinaImg, tags: ['Pintura'] },
+    { icon: <Building size={26} />, title: 'Fabricación de carrocerías', description: 'Diseño y fabricación de carrocerías para distintos tipos de operación y carga.', img: guillotinaImg, tags: ['Fabricación'] },
+    { icon: <Truck size={26} />, title: 'Reparación de semirremolques', description: 'Intervención estructural y funcional en semirremolques de transporte.', img: semitrailerRepairImg, tags: ['Semirremolques'] },
+    { icon: <Wrench size={26} />, title: 'Reparación de camiones', description: 'Reparaciones integrales para mantener continuidad operativa de flotas y unidades.', img: truckRepairImg, tags: ['Camiones'] },
+    { icon: <Cog size={26} />, title: 'Hidráulica, mecánica y neumática', description: 'Diagnóstico y reparación de sistemas hidráulicos, mecánicos y neumáticos.', img: hidraulicaImg, tags: ['Hidráulica'] },
   ];
 
   return (
@@ -98,7 +98,16 @@ const Services = () => {
                   alt={serviceList[activeIndex].title}
                   className="w-full h-full object-cover"
                 />
-                {/* Overlay mapping safe color backdrops on top for aesthetics if needed */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  {serviceList[activeIndex].tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-black/45 backdrop-blur text-white text-xs font-semibold tracking-wide border border-white/25"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
               </motion.div>
             </AnimatePresence>
