@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
-import plegadoraImg from '../../assets/plegadora.png';
 import guillotinaImg from '../../assets/guillotina.png';
-import cabinaImg from '../../assets/cabina.png';
-import tornoImg from '../../assets/torno.png';
+import migWeldingImg from '../../assets/updated/mig-welding.jpg';
+import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
 
 const Equipment = () => {
   const machinery = [
-    { title: 'Plegadora LVD 220 Ton', description: 'Capacidad de plegado de alta precisión para estructuras pesadas.', img: plegadoraImg },
-    { title: 'Guillotina CNC', description: 'Corte exacto en distintos espesores de planchas de acero.', img: guillotinaImg },
-    { title: 'Cabina de Pintura al Horno', description: 'Acabados perfectos libres de impurezas con secado acelerado y filtrado industrial.', img: cabinaImg },
-    { title: 'Tornos Paralelos', description: 'Mecanizado de piezas cilíndricas de grandes dimensiones.', img: tornoImg },
+    { title: 'Cortadora y plegadora', description: 'Equipo para corte y conformado preciso de planchas y perfiles estructurales.', img: guillotinaImg },
+    { title: 'Soldadoras MIG', description: 'Soldadura de alta resistencia para reparación y fabricación de componentes metálicos.', img: migWeldingImg },
+    { title: 'Mesa geométrica', description: 'Alineación estructural y control dimensional para trabajos de alta exigencia.', img: semitrailerRepairImg },
   ];
 
   return (
@@ -31,10 +29,10 @@ const Equipment = () => {
             viewport={{ once: true }}
             className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
           >
-            Maquinaria de <span className="text-secondary">Vanguardia</span>
+            Nuestra <span className="text-secondary">Maquinaria</span>
           </motion.h2>
           <p className="text-gray-600 mt-4 leading-relaxed">
-            Contamos con más de 13,000 metros cuadrados equipados con tecnología avanzada para asegurar la máxima precisión en cada proyecto.
+            Contamos con equipamiento especializado para procesos de corte, soldadura y alineación estructural.
           </p>
         </div>
 

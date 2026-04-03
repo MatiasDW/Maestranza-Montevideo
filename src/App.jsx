@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MessageCircle, Instagram } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -6,6 +7,7 @@ import Services from './components/sections/Services';
 import Equipment from './components/sections/Equipment';
 import Brands from './components/sections/Brands';
 import Contact from './features/contact/Contact';
+import { WHATSAPP_URL, INSTAGRAM_URL } from './config/contactLinks';
 import truckSil1 from './assets/truck_sil_1.png';
 import truckSil2 from './assets/truck_sil_2.png';
 import truckSil3 from './assets/truck_sil_3.png';
@@ -78,12 +80,45 @@ function App() {
           <Contact />
         </div>
       </main>
+
+      {/* Quick Contact Actions */}
+      <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="h-12 w-12 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-lg flex items-center justify-center transition-colors"
+          aria-label="Contáctenos por WhatsApp"
+          title="Contáctenos por WhatsApp"
+        >
+          <MessageCircle size={22} />
+        </a>
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="h-12 w-12 rounded-full bg-white hover:bg-gray-100 text-primary border border-gray-200 shadow-lg flex items-center justify-center transition-colors"
+          aria-label="Ir a Instagram"
+          title="Ir a Instagram"
+        >
+          <Instagram size={22} />
+        </a>
+      </div>
       
       {/* Footer */}
       <footer className="bg-primary border-t border-primary/80 py-8 text-center text-sm text-blue-200/70 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
           <p>&copy; {new Date().getFullYear()} Maestranza Montevideo S.A. Todos los derechos reservados.</p>
           <p className="text-xs mt-1 text-blue-300/50">Fresia 1927, Renca, Santiago.</p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 mt-3 text-blue-200 hover:text-white transition-colors"
+          >
+            <Instagram size={14} />
+            Instagram
+          </a>
         </div>
       </footer>
     </div>

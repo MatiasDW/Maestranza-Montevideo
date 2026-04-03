@@ -1,25 +1,21 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wrench, Zap, Droplet, Cylinder, Building, Paintbrush, ShieldAlert } from 'lucide-react';
+import { Wrench, Truck, Building, Paintbrush, Cog } from 'lucide-react';
 import plegadoraImg from '../../assets/plegadora.png';
-import guillotinaImg from '../../assets/guillotina.png';
 import cabinaImg from '../../assets/cabina.png';
-import tornoImg from '../../assets/torno.png';
-import electromecanicaImg from '../../assets/electromecanica.png';
 import hidraulicaImg from '../../assets/hidraulica.png';
-import neumaticaImg from '../../assets/neumatica.png';
+import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
+import truckRepairImg from '../../assets/updated/truck-repair.jpg';
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const serviceList = [
-    { icon: <Wrench size={26} />, title: 'Mecánica General', description: 'Mantenimiento preventivo y correctivo de motores, transmisiones y tren delantero.', img: tornoImg },
-    { icon: <Zap size={26} />, title: 'Electromecánica', description: 'Diagnóstico por scanner, reparación de fallas eléctricas, alternadores y cableados.', img: electromecanicaImg },
-    { icon: <Droplet size={26} />, title: 'Hidráulica', description: 'Reparación de botellas hidráulicas, mangueras de presión y sistemas de levante.', img: hidraulicaImg },
-    { icon: <Cylinder size={26} />, title: 'Neumática', description: 'Atención especializada a sistemas de frenos de aire y compresores industriales.', img: neumaticaImg },
-    { icon: <Building size={26} />, title: 'Estructuras Pesadas', description: 'Fabricación y reparación estructural de chasis, carrocerías y tolvas de transporte.', img: plegadoraImg },
-    { icon: <ShieldAlert size={26} />, title: 'Desabolladura Térmica', description: 'Enderezado de chasis con equipos de tensión y recuperación de cabinas.', img: guillotinaImg },
-    { icon: <Paintbrush size={26} />, title: 'Pintura al Horno', description: 'Acabados de calidad automotriz en cabina de pintura presurizada.', img: cabinaImg },
+    { icon: <Paintbrush size={26} />, title: 'Desabolladura y Pintura', description: 'Recuperación de superficies y terminaciones automotrices con estándares profesionales.', img: cabinaImg },
+    { icon: <Building size={26} />, title: 'Fabricación de carrocerías', description: 'Diseño y fabricación de carrocerías para distintos tipos de operación y carga.', img: plegadoraImg },
+    { icon: <Truck size={26} />, title: 'Reparación de semirremolques', description: 'Intervención estructural y funcional en semirremolques de transporte.', img: semitrailerRepairImg },
+    { icon: <Wrench size={26} />, title: 'Reparación de camiones', description: 'Reparaciones integrales para mantener continuidad operativa de flotas y unidades.', img: truckRepairImg },
+    { icon: <Cog size={26} />, title: 'Hidráulica, mecánica y neumática', description: 'Diagnóstico y reparación de sistemas hidráulicos, mecánicos y neumáticos.', img: hidraulicaImg },
   ];
 
   return (
@@ -34,7 +30,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-primary font-semibold uppercase tracking-wider text-sm"
           >
-            Nuestra Especialidad
+            Procesos
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -42,10 +38,10 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mt-2 text-slate-900"
           >
-            Servicios <span className="text-secondary">Integrales</span> Multimarca
+            Procesos de <span className="text-secondary">Trabajo</span>
           </motion.h2>
           <p className="text-gray-600 mt-4 leading-relaxed">
-            Abordamos cada vehículo o maquinaria con un enfoque multidisciplinario para garantizar reparaciones rápidas, precisas y duraderas.
+            Ejecutamos procesos técnicos para reparación, fabricación y mantención integral de vehículos de carga.
           </p>
         </div>
 

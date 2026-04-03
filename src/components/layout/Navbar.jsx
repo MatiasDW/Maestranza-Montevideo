@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { WHATSAPP_URL, INSTAGRAM_URL } from '../../config/contactLinks';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
     { name: 'Nosotros', href: '#about' },
     { name: 'Servicios', href: '#services' },
     { name: 'Equipamiento', href: '#equipment' },
-    { name: 'Marcas', href: '#brands' },
+    { name: 'Clientes', href: '#brands' },
     { name: 'Contacto', href: '#contact' },
   ];
 
@@ -46,7 +47,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -61,6 +62,26 @@ const Navbar = () => {
             className="bg-primary hover:bg-primary/80 text-white px-5 py-2 rounded-md font-semibold text-sm transition-transform duration-200 hover:scale-105 shadow-md"
           >
             Cotizar
+          </a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-green-600 hover:bg-green-500 text-white p-2.5 rounded-md shadow-md transition-colors"
+            aria-label="Contáctenos por WhatsApp"
+            title="Contáctenos por WhatsApp"
+          >
+            <MessageCircle size={18} />
+          </a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-white/90 hover:bg-white text-primary border border-gray-200 p-2.5 rounded-md shadow-md transition-colors"
+            aria-label="Visítanos en Instagram"
+            title="Visítanos en Instagram"
+          >
+            <Instagram size={18} />
           </a>
         </div>
 
@@ -102,6 +123,28 @@ const Navbar = () => {
               >
                 Cotizar ahora
               </a>
+              <div className="grid grid-cols-2 gap-2 mt-2">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="bg-green-600 hover:bg-green-500 text-white text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2"
+                >
+                  <MessageCircle size={18} />
+                  WhatsApp
+                </a>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="bg-gray-100 hover:bg-gray-200 text-slate-800 text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2 border border-gray-200"
+                >
+                  <Instagram size={18} />
+                  Instagram
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

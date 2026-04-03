@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, AlertCircle, MessageCircle, Instagram } from 'lucide-react';
 import { useContactForm } from './useContactForm';
+import { WHATSAPP_URL, INSTAGRAM_URL } from '../../config/contactLinks';
 
 const Contact = () => {
   const { submitForm, isLoading, isSuccess, isError, errorMessage, resetStatus } = useContactForm();
@@ -86,8 +87,9 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold text-lg text-slate-800">Teléfonos</h4>
-                <p className="text-gray-600 text-sm mt-1">2 2641 5351</p>
-                <p className="text-gray-600 text-sm">2 2646 1232</p>
+                <p className="text-gray-600 text-sm mt-1">Celular: +56 9 9318 1569</p>
+                <p className="text-gray-600 text-sm">Fijo: 2 2646 1232</p>
+                <p className="text-gray-600 text-sm">Fijo: 2 2641 5351</p>
               </div>
             </div>
 
@@ -97,8 +99,29 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold text-lg text-slate-800">Correo Electrónico</h4>
-                <p className="text-gray-600 text-sm mt-1">contacto@maestranzamontevideo.cl</p>
+                <p className="text-gray-600 text-sm mt-1">administracion@maestranzamontevideo.cl</p>
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-green-600 hover:bg-green-500 text-white border border-green-400/40 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-colors"
+              >
+                <MessageCircle size={18} />
+                Contáctenos por WSP
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white hover:bg-gray-50 text-slate-800 border border-gray-200 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-colors"
+              >
+                <Instagram size={18} />
+                Ir a Instagram
+              </a>
             </div>
 
             {/* Google Map Placeholder (Optional framing) */}

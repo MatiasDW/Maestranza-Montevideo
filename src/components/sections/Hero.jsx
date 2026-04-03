@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
+import { WHATSAPP_URL } from '../../config/contactLinks';
 
 const Hero = () => {
   return (
@@ -45,12 +46,14 @@ const Hero = () => {
               Cotizar ahora <ArrowRight size={20} />
             </motion.a>
             <motion.a
-              href="#services"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 font-bold px-8 py-4 rounded-lg text-lg w-full sm:w-auto text-center"
+              className="bg-green-600/90 hover:bg-green-500 text-white border border-green-400/40 font-bold px-8 py-4 rounded-lg text-lg w-full sm:w-auto text-center flex items-center justify-center gap-2"
             >
-              Ver Servicios
+              Contáctenos por WSP <MessageCircle size={20} />
             </motion.a>
           </div>
         </motion.div>
