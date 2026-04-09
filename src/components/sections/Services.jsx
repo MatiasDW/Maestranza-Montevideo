@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wrench, Truck, Building, Paintbrush, Cog } from 'lucide-react';
-import guillotinaImg from '../../assets/guillotina.png';
-import cabinaImg from '../../assets/cabina.png';
-import hidraulicaImg from '../../assets/hidraulica.png';
+import guillotinaImg from '../../assets/guillotina.jpg';
+import cabinaImg from '../../assets/cabina.jpg';
+import hidraulicaImg from '../../assets/hidraulica.jpg';
 import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
 import truckRepairImg from '../../assets/updated/truck-repair.jpg';
 
