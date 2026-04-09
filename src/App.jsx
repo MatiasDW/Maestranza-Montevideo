@@ -8,9 +8,9 @@ import Equipment from './components/sections/Equipment';
 import Brands from './components/sections/Brands';
 import Contact from './features/contact/Contact';
 import { WHATSAPP_URL, INSTAGRAM_URL } from './config/contactLinks';
-import truckSil1 from './assets/truck_sil_1.png';
-import truckSil2 from './assets/truck_sil_2.png';
-import truckSil3 from './assets/truck_sil_3.png';
+import truckSil1 from './assets/truck_sil_1.jpg';
+import truckSil2 from './assets/truck_sil_2.jpg';
+import truckSil3 from './assets/truck_sil_3.jpg';
 
 function App() {
   return (

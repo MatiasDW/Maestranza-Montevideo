@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import guillotinaImg from '../../assets/guillotina.png';
+import guillotinaImg from '../../assets/guillotina.jpg';
 import migWeldingImg from '../../assets/updated/mig-welding.jpg';
 import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
 
