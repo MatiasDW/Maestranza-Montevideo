@@ -1,16 +1,44 @@
-# React + Vite
+# Maestranza Montevideo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page built with React and Vite, prepared for deployment on Railway.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Railway deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This repository now includes:
 
-## Expanding the ESLint configuration
+- A `railway.json` config file for Railway
+- A production `npm start` command that serves the built `dist/` folder
+- A `.env.example` file with the required public environment variable
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Required Railway variable
+
+Add this variable in Railway before deploying:
+
+```bash
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+Important: this is a Vite frontend variable, so Railway must have it set before the build runs. If you add or change it later, redeploy the service.
+
+### Recommended Railway setup
+
+1. Create a new Railway project from this GitHub repository.
+2. In the service variables, add `VITE_FORMSPREE_ENDPOINT`.
+3. Deploy the service.
+4. In `Settings -> Networking`, generate a public domain.
+
+Railway should pick up these commands from the repository:
+
+- Build: `npm run build`
+- Start: `npm run start`
+
+## Contact form
+
+The contact form posts directly to Formspree from the browser. If `VITE_FORMSPREE_ENDPOINT` is missing, the form will show a clear configuration error instead of calling a fake endpoint.

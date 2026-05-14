@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WHATSAPP_URL, INSTAGRAM_URL } from '../../config/contactLinks';
+import logo from '../../assets/logos/maestranza-montevideo.svg';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,19 +31,13 @@ const Navbar = () => {
         {/* LOGO */}
         <div className="flex-shrink-0">
           <a href="#hero" className="flex items-center py-2 h-14">
-            <svg viewBox="0 0 240 80" className={`h-9 sm:h-12 w-auto transition-transform ${isScrolled ? 'scale-90' : 'scale-100'}`} fill="none">
-              {/* Shield/Banner Background */}
-              <path d="M 0 0 L 240 0 L 240 55 L 120 72 L 0 55 Z" fill="#1a4375" />
-              {/* Inner Chevron Line */}
-              <path d="M 15 52 L 120 66 L 225 52" stroke="white" strokeWidth="2" fill="none" className="opacity-80" />
-              {/* Text */}
-              <text x="120" y="27" textAnchor="middle" fill="#ffffff" fontSize="15" fontWeight="700" letterSpacing="1.5" fontFamily="Georgia, serif">
-                MAESTRANZA
-              </text>
-              <text x="120" y="49" textAnchor="middle" fill="#ffffff" fontSize="20" fontWeight="900" letterSpacing="1" fontFamily="Georgia, serif">
-                MONTEVIDEO
-              </text>
-            </svg>
+            <img
+              src={logo}
+              alt="Maestranza Montevideo"
+              className={`h-9 sm:h-12 w-auto transition-transform ${isScrolled ? 'scale-90' : 'scale-100'}`}
+              loading="eager"
+              decoding="async"
+            />
           </a>
         </div>
 
