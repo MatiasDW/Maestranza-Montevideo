@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, Instagram } from 'lucide-react';
+import { Menu, X, MessageCircle, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WHATSAPP_URL, INSTAGRAM_URL } from '../../config/contactLinks';
+import { WHATSAPP_URL, LINKEDIN_URL } from '../../config/contactLinks';
 import logo from '../../assets/logos/maestranza-montevideo.svg';
 
 const Navbar = () => {
@@ -34,6 +34,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Maestranza Montevideo"
+              width="288"
+              height="168"
               className={`h-9 sm:h-12 w-auto transition-transform ${isScrolled ? 'scale-90' : 'scale-100'}`}
               loading="eager"
               decoding="async"
@@ -69,21 +71,25 @@ const Navbar = () => {
             <MessageCircle size={18} />
           </a>
           <a
-            href={INSTAGRAM_URL}
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noreferrer"
-            className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white p-2.5 rounded-md shadow-md transition-all border border-white/20"
-            aria-label="Visítanos en Instagram"
-            title="Visítanos en Instagram"
+            className="bg-[#0A66C2] hover:bg-[#004182] text-white p-2.5 rounded-md shadow-md transition-all border border-white/20"
+            aria-label="Visita el perfil de LinkedIn de Matias Davila"
+            title="Visita el perfil de LinkedIn de Matias Davila"
           >
-            <Instagram size={18} />
+            <Linkedin size={18} />
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Cerrar menu principal' : 'Abrir menu principal'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
             className={`p-2 transition-colors ${isScrolled ? 'text-slate-700 hover:text-primary' : 'text-gray-200 hover:text-white'}`}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,6 +101,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -130,14 +137,14 @@ const Navbar = () => {
                   WhatsApp
                 </a>
                 <a
-                  href={INSTAGRAM_URL}
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2 border border-white/20"
+                  className="bg-[#0A66C2] hover:bg-[#004182] text-white text-center py-3 rounded-md font-semibold flex items-center justify-center gap-2 border border-white/20"
                 >
-                  <Instagram size={18} />
-                  Instagram
+                  <Linkedin size={18} />
+                  LinkedIn
                 </a>
               </div>
             </div>

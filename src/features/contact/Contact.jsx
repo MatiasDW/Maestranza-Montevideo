@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, AlertCircle, MessageCircle, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, AlertCircle, MessageCircle, Linkedin } from 'lucide-react';
 import { useContactForm } from './useContactForm';
-import { WHATSAPP_URL, INSTAGRAM_URL } from '../../config/contactLinks';
+import { WHATSAPP_URL, LINKEDIN_URL } from '../../config/contactLinks';
 
 const Contact = () => {
   const { submitForm, isLoading, isSuccess, isError, errorMessage, resetStatus } = useContactForm();
@@ -77,7 +77,7 @@ const Contact = () => {
                 <MapPin size={24} />
               </div>
               <div>
-                <h4 className="font-bold text-lg text-slate-800">Dirección</h4>
+                <h3 className="font-bold text-lg text-slate-800">Dirección</h3>
                 <p className="text-gray-600 text-sm mt-1">Fresia 1927, Renca, Santiago, Chile.</p>
               </div>
             </div>
@@ -87,7 +87,7 @@ const Contact = () => {
                 <Phone size={24} />
               </div>
               <div>
-                <h4 className="font-bold text-lg text-slate-800">Teléfonos</h4>
+                <h3 className="font-bold text-lg text-slate-800">Teléfonos</h3>
                 <p className="text-gray-600 text-sm mt-1">Celular: +56 9 9318 1569</p>
                 <p className="text-gray-600 text-sm">Fijo: 2 2646 1232</p>
                 <p className="text-gray-600 text-sm">Fijo: 2 2641 5351</p>
@@ -99,7 +99,7 @@ const Contact = () => {
                 <Mail size={24} />
               </div>
               <div>
-                <h4 className="font-bold text-lg text-slate-800">Correo Electrónico</h4>
+                <h3 className="font-bold text-lg text-slate-800">Correo Electrónico</h3>
                 <p className="text-gray-600 text-sm mt-1">administracion@maestranzamontevideo.cl</p>
               </div>
             </div>
@@ -115,13 +115,13 @@ const Contact = () => {
                 Contáctenos por WSP
               </a>
               <a
-                href={INSTAGRAM_URL}
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white border border-white/20 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-all"
+                className="bg-[#0A66C2] hover:bg-[#004182] text-white border border-white/20 p-4 rounded-2xl flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition-all"
               >
-                <Instagram size={18} />
-                Ir a Instagram
+                <Linkedin size={18} />
+                Ver LinkedIn
               </a>
             </div>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                     <span className="font-bold">Error de Envío</span>
                     <p className="text-xs">{errorMessage}</p>
                   </div>
-                  <button onClick={resetStatus} className="text-red-400 hover:text-white text-sm">Cerrar</button>
+                  <button type="button" onClick={resetStatus} className="text-red-400 hover:text-white text-sm">Cerrar</button>
                 </motion.div>
               )}
             </AnimatePresence>

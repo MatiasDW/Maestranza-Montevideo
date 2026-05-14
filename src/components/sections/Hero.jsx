@@ -15,6 +15,10 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="space-y-6 flex flex-col items-center"
         >
+          <h1 className="sr-only">
+            Maestranza Montevideo S.A. soluciones integrales en mecanica, hidraulica y estructuras para transporte y construccion.
+          </h1>
+
           {/* Corporate Logo Crest — Large & Central */}
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
@@ -25,6 +29,8 @@ const Hero = () => {
             <img
               src={logo}
               alt="Maestranza Montevideo"
+              width="288"
+              height="168"
               className="h-24 md:h-32 lg:h-36 w-auto drop-shadow-2xl"
               loading="eager"
               decoding="async"
@@ -37,7 +43,7 @@ const Hero = () => {
           </span>
           
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed">
-            Soluciones integrales en Mecánica, Hidráulica y Estructuras para el Transporte y la Construcción. Calidad certificada ISO 9001.
+            Soluciones integrales en Mecánica, Hidráulica y Estructuras para el Transporte y la Construcción.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-3xl mt-2">

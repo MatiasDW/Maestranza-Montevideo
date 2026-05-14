@@ -11,11 +11,11 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const serviceList = [
-    { icon: <Paintbrush size={26} />, title: 'Desabolladura y Pintura', description: 'Recuperación de superficies y terminaciones automotrices con estándares profesionales.', img: cabinaImg, tags: ['Pintura'] },
-    { icon: <Building size={26} />, title: 'Fabricación de carrocerías', description: 'Diseño y fabricación de carrocerías para distintos tipos de operación y carga.', img: guillotinaImg, tags: ['Fabricación'] },
-    { icon: <Truck size={26} />, title: 'Reparación de semirremolques', description: 'Intervención estructural y funcional en semirremolques de transporte.', img: semitrailerRepairImg, tags: ['Semirremolques'] },
-    { icon: <Wrench size={26} />, title: 'Reparación de camiones', description: 'Reparaciones integrales para mantener continuidad operativa de flotas y unidades.', img: truckRepairImg, tags: ['Camiones'] },
-    { icon: <Cog size={26} />, title: 'Hidráulica, mecánica y neumática', description: 'Diagnóstico y reparación de sistemas hidráulicos, mecánicos y neumáticos.', img: hidraulicaImg, tags: ['Hidráulica'] },
+    { id: 'paint-bodywork', icon: <Paintbrush size={26} />, title: 'Desabolladura y Pintura', description: 'Recuperación de superficies y terminaciones automotrices con estándares profesionales.', img: cabinaImg, tags: ['Pintura'] },
+    { id: 'body-fabrication', icon: <Building size={26} />, title: 'Fabricación de carrocerías', description: 'Diseño y fabricación de carrocerías para distintos tipos de operación y carga.', img: guillotinaImg, tags: ['Fabricación'] },
+    { id: 'semitrailer-repair', icon: <Truck size={26} />, title: 'Reparación de semirremolques', description: 'Intervención estructural y funcional en semirremolques de transporte.', img: semitrailerRepairImg, tags: ['Semirremolques'] },
+    { id: 'truck-repair', icon: <Wrench size={26} />, title: 'Reparación de camiones', description: 'Reparaciones integrales para mantener continuidad operativa de flotas y unidades.', img: truckRepairImg, tags: ['Camiones'] },
+    { id: 'hydraulics-mechanics-pneumatics', icon: <Cog size={26} />, title: 'Hidráulica, mecánica y neumática', description: 'Diagnóstico y reparación de sistemas hidráulicos, mecánicos y neumáticos.', img: hidraulicaImg, tags: ['Hidráulica'] },
   ];
 
   return (
@@ -45,14 +45,57 @@ const Services = () => {
           </p>
         </div>
 
+        <div className="lg:hidden space-y-4">
+          {serviceList.map((service) => (
+            <article
+              key={service.id}
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[16/10]">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/35 to-transparent" />
+                <div className="absolute top-3 left-3 flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-black/45 backdrop-blur text-white text-[11px] font-semibold tracking-wide border border-white/25"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="p-5">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl flex-shrink-0 bg-secondary text-white">
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-primary">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm mt-1 leading-relaxed text-gray-600">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
         {/* Interactive Split View */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch h-full">
+        <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-stretch h-full">
           
           {/* Left: Interactive List */}
           <div className="lg:col-span-5 flex flex-col space-y-3 lg:h-[480px] lg:overflow-y-auto pr-0 lg:pr-2 scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
             {serviceList.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.id}
                 onMouseEnter={() => setActiveIndex(index)}
                 onClick={() => setActiveIndex(index)}
                 whileHover={{ x: 10 }}

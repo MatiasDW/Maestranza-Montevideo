@@ -15,26 +15,36 @@ import otrosClientesLogo from '../../assets/logos/otros-clientes.svg';
 
 const Brands = () => {
   const insuranceClients = [
-    { name: 'Mapfre Seguros', logo: mapfreLogo, logoAlt: 'Logo Mapfre Seguros' },
-    { name: 'HDI Seguros', logo: hdiLogo, logoAlt: 'Logo HDI Seguros' },
-    { name: 'FID Seguros', logo: fidLogo, logoAlt: 'Logo FID Seguros' },
-    { name: 'BCI Seguros', logo: bciLogo, logoAlt: 'Logo BCI Seguros' },
-    { name: 'Consorcio', logo: consorcioLogo, logoAlt: 'Logo Consorcio' },
-    { name: 'SURA', logo: suraLogo, logoAlt: 'Logo SURA' },
-    { name: 'Zurich Seguros', logo: zurichLogo, logoAlt: 'Logo Zurich Seguros' },
-    { name: 'Reale Seguros Chile', logo: realeLogo, logoAlt: 'Logo Reale Seguros Chile' },
+    { id: 'mapfre', name: 'Mapfre Seguros', logo: mapfreLogo, logoAlt: 'Logo Mapfre Seguros' },
+    { id: 'hdi', name: 'HDI Seguros', logo: hdiLogo, logoAlt: 'Logo HDI Seguros' },
+    { id: 'fid', name: 'FID Seguros', logo: fidLogo, logoAlt: 'Logo FID Seguros' },
+    { id: 'bci', name: 'BCI Seguros', logo: bciLogo, logoAlt: 'Logo BCI Seguros' },
+    { id: 'consorcio', name: 'Consorcio', logo: consorcioLogo, logoAlt: 'Logo Consorcio' },
+    { id: 'sura', name: 'SURA', logo: suraLogo, logoAlt: 'Logo SURA' },
+    { id: 'zurich', name: 'Zurich Seguros', logo: zurichLogo, logoAlt: 'Logo Zurich Seguros' },
+    { id: 'reale', name: 'Reale Seguros Chile', logo: realeLogo, logoAlt: 'Logo Reale Seguros Chile' },
   ];
 
   const privateClients = [
-    { name: 'Andina Refrescos', logo: andinaLogo, logoAlt: 'Logo Andina Refrescos' },
-    { name: 'KDM', logo: kdmLogo, logoAlt: 'Logo KDM' },
-    { name: 'Dimensión', logo: dimensionLogo, logoAlt: 'Logo Dimensión' },
-    { name: 'LTS Walmart', logo: walmartLogo, logoAlt: 'Logo Walmart' },
-    { name: 'Entre otros', logo: otrosClientesLogo, logoAlt: 'Red de clientes entre otros' },
+    { id: 'andina', name: 'Andina Refrescos', logo: andinaLogo, logoAlt: 'Logo Andina Refrescos' },
+    { id: 'kdm', name: 'KDM', logo: kdmLogo, logoAlt: 'Logo KDM' },
+    { id: 'dimension', name: 'Dimensión', logo: dimensionLogo, logoAlt: 'Logo Dimensión' },
+    { id: 'walmart', name: 'LTS Walmart', logo: walmartLogo, logoAlt: 'Logo Walmart' },
+    { id: 'others', name: 'Entre otros', logo: otrosClientesLogo, logoAlt: 'Red de clientes entre otros' },
   ];
 
-  const insuranceTrack = [...insuranceClients, ...insuranceClients, ...insuranceClients];
-  const privateTrack = [...privateClients, ...privateClients, ...privateClients];
+  const insuranceTrack = Array.from({ length: 3 }, (_, repeatIndex) =>
+    insuranceClients.map((client) => ({
+      ...client,
+      trackId: `${client.id}-${repeatIndex}`,
+    })),
+  ).flat();
+  const privateTrack = Array.from({ length: 3 }, (_, repeatIndex) =>
+    privateClients.map((client) => ({
+      ...client,
+      trackId: `${client.id}-${repeatIndex}`,
+    })),
+  ).flat();
 
   return (
     <section id="brands" className="py-16 md:py-20 bg-gray-50 text-slate-800 border-y border-gray-100 overflow-hidden">
@@ -63,7 +73,77 @@ const Brands = () => {
       </div>
 
       <div className="mt-12 space-y-6">
-        <div className="relative overflow-hidden">
+        <div className="md:hidden space-y-8">
+          <div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+              <p className="text-sm uppercase tracking-wider font-semibold text-primary">
+                Compañías de seguros
+              </p>
+            </div>
+            <div className="overflow-x-auto px-4 sm:px-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="flex gap-4 w-max snap-x snap-mandatory pb-2">
+                {insuranceClients.map((client) => (
+                  <article
+                    key={client.name}
+                    className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 snap-start"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-24 rounded-xl bg-white border border-gray-200 flex items-center justify-center px-2">
+                        <img
+                          src={client.logo}
+                          alt={client.logoAlt}
+                          className="max-h-8 w-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-800 text-sm">{client.name}</h3>
+                        <p className="text-[11px] uppercase tracking-wider text-secondary font-semibold">
+                          Seguros
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+              <p className="text-sm uppercase tracking-wider font-semibold text-primary">
+                Clientes particulares
+              </p>
+            </div>
+            <div className="overflow-x-auto px-4 sm:px-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="flex gap-4 w-max snap-x snap-mandatory pb-2">
+                {privateClients.map((client) => (
+                  <article
+                    key={client.name}
+                    className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 snap-start"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-24 rounded-xl bg-white border border-gray-200 flex items-center justify-center px-2">
+                        <img
+                          src={client.logo}
+                          alt={client.logoAlt}
+                          className="max-h-8 w-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-800 text-sm">{client.name}</h3>
+                        <p className="text-[11px] uppercase tracking-wider text-secondary font-semibold">
+                          Particular
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden hidden md:block">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
             <p className="text-sm uppercase tracking-wider font-semibold text-primary">
               Compañías de seguros
@@ -74,9 +154,9 @@ const Brands = () => {
             transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
             className="flex gap-4 w-max px-4 relative"
           >
-            {insuranceTrack.map((client, index) => (
+            {insuranceTrack.map((client) => (
               <article
-                key={`${client.name}-${index}`}
+                key={client.trackId}
                 className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
@@ -101,7 +181,7 @@ const Brands = () => {
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-gray-50 to-transparent" />
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden hidden md:block">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
             <p className="text-sm uppercase tracking-wider font-semibold text-primary">
               Clientes particulares
@@ -112,9 +192,9 @@ const Brands = () => {
             transition={{ repeat: Infinity, ease: 'linear', duration: 26 }}
             className="flex gap-4 w-max px-4"
           >
-            {privateTrack.map((client, index) => (
+            {privateTrack.map((client) => (
               <article
-                key={`${client.name}-${index}`}
+                key={client.trackId}
                 className="w-[280px] bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
