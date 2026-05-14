@@ -5,9 +5,9 @@ import semitrailerRepairImg from '../../assets/updated/semitrailer-repair.jpg';
 
 const Equipment = () => {
   const machinery = [
-    { title: 'Cortadora y plegadora', description: 'Equipo para corte y conformado preciso de planchas y perfiles estructurales.', img: guillotinaImg },
-    { title: 'Soldadoras MIG', description: 'Soldadura de alta resistencia para reparación y fabricación de componentes metálicos.', img: migWeldingImg },
-    { title: 'Mesa geométrica', description: 'Alineación estructural y control dimensional para trabajos de alta exigencia.', img: semitrailerRepairImg },
+    { id: 'guillotine-bender', title: 'Cortadora y plegadora', description: 'Equipo para corte y conformado preciso de planchas y perfiles estructurales.', img: guillotinaImg },
+    { id: 'mig-welding', title: 'Soldadoras MIG', description: 'Soldadura de alta resistencia para reparación y fabricación de componentes metálicos.', img: migWeldingImg },
+    { id: 'geometry-bench', title: 'Mesa geométrica', description: 'Alineación estructural y control dimensional para trabajos de alta exigencia.', img: semitrailerRepairImg },
   ];
 
   return (
@@ -39,7 +39,7 @@ const Equipment = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {machinery.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

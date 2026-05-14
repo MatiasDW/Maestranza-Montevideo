@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { MessageCircle, Linkedin } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -7,7 +7,7 @@ import Services from './components/sections/Services';
 import Equipment from './components/sections/Equipment';
 import Brands from './components/sections/Brands';
 import Contact from './features/contact/Contact';
-import { WHATSAPP_URL, INSTAGRAM_URL } from './config/contactLinks';
+import { WHATSAPP_URL, LINKEDIN_URL } from './config/contactLinks';
 import truckSil1 from './assets/truck_sil_1.jpg';
 import truckSil2 from './assets/truck_sil_2.jpg';
 import truckSil3 from './assets/truck_sil_3.jpg';
@@ -25,6 +25,8 @@ function App() {
           <motion.img
             src={truckSil1}
             alt=""
+            width="640"
+            height="640"
             animate={{ x: ['-60%', '120%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
             className="absolute top-1/2 -translate-y-1/2 w-[700px] md:w-[900px] lg:w-[1100px] opacity-[0.15] pointer-events-none z-0"
@@ -37,6 +39,8 @@ function App() {
           <motion.img
             src={truckSil2}
             alt=""
+            width="640"
+            height="640"
             animate={{ x: ['120%', '-60%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 35 }}
             className="absolute top-1/4 w-[600px] md:w-[800px] lg:w-[1000px] opacity-[0.15] pointer-events-none z-0"
@@ -49,6 +53,8 @@ function App() {
           <motion.img
             src={truckSil3}
             alt=""
+            width="640"
+            height="640"
             animate={{ x: ['-60%', '120%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 28 }}
             className="absolute bottom-8 w-[700px] md:w-[900px] lg:w-[1100px] opacity-[0.15] pointer-events-none z-0"
@@ -61,6 +67,8 @@ function App() {
           <motion.img
             src={truckSil1}
             alt=""
+            width="640"
+            height="640"
             animate={{ x: ['120%', '-60%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 32 }}
             className="absolute top-1/2 -translate-y-1/2 w-[600px] md:w-[800px] lg:w-[1000px] opacity-[0.15] pointer-events-none z-0"
@@ -73,6 +81,8 @@ function App() {
           <motion.img
             src={truckSil2}
             alt=""
+            width="640"
+            height="640"
             animate={{ x: ['-60%', '120%'] }}
             transition={{ repeat: Infinity, ease: 'linear', duration: 38 }}
             className="absolute top-1/3 w-[700px] md:w-[900px] lg:w-[1100px] opacity-[0.15] pointer-events-none z-0"
@@ -95,34 +105,34 @@ function App() {
           <MessageCircle size={22} />
         </a>
         <a
-          href={INSTAGRAM_URL}
+          href={LINKEDIN_URL}
           target="_blank"
           rel="noreferrer"
-          className="h-12 w-12 rounded-full bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] hover:brightness-110 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all"
-          aria-label="Ir a Instagram"
-          title="Ir a Instagram"
+          className="h-12 w-12 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white border border-white/20 shadow-lg flex items-center justify-center transition-all"
+          aria-label="Ir a LinkedIn"
+          title="Ir a LinkedIn"
         >
-          <Instagram size={22} />
+          <Linkedin size={22} />
         </a>
       </div>
       
       {/* Footer */}
-      <footer className="bg-primary border-t border-primary/80 py-8 text-center text-sm text-blue-200/70 relative z-10">
+      <footer className="bg-primary border-t border-primary/80 py-8 text-center text-sm text-blue-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
           <p>&copy; {new Date().getFullYear()} Maestranza Montevideo S.A. Todos los derechos reservados.</p>
-          <p className="text-xs mt-1 text-blue-300/50">Fresia 1927, Renca, Santiago.</p>
+          <p className="text-xs mt-1 text-blue-100">Fresia 1927, Renca, Santiago.</p>
           <a
-            href={INSTAGRAM_URL}
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 mt-3 text-blue-200 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 mt-3 text-blue-50 underline underline-offset-4 hover:text-white transition-colors"
           >
-            <span className="h-5 w-5 rounded-full bg-[linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)] text-white inline-flex items-center justify-center">
-              <Instagram size={12} />
+            <span className="h-5 w-5 rounded-full bg-[#0A66C2] text-white inline-flex items-center justify-center">
+              <Linkedin size={12} />
             </span>
-            Instagram
+            LinkedIn
           </a>
-          <p className="text-xs mt-3 text-blue-200/80">Creado por Matias Davila</p>
+          <p className="text-xs mt-3 text-blue-100">Creado por Matias Davila</p>
         </div>
       </footer>
     </div>

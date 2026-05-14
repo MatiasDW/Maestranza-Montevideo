@@ -1,24 +1,27 @@
 import { motion } from 'framer-motion';
-import { Award, ShieldCheck, Clock, Box } from 'lucide-react';
+import { ShieldCheck, Clock, Box } from 'lucide-react';
 
 const About = () => {
   const stats = [
     {
+      id: 'experience',
       icon: <Clock size={36} className="text-secondary" />,
       value: '15+',
       label: 'Años de Experiencia',
       surface: 'bg-white',
     },
     {
+      id: 'infrastructure',
       icon: <Box size={36} className="text-secondary" />,
       value: '13.000',
       label: 'Metros Cuadrados de Infraestructura',
       surface: 'bg-white',
     },
     {
+      id: 'multibrand',
       icon: <ShieldCheck size={36} className="text-white" />,
-      value: 'ISO 9001:2015',
-      label: 'Gestión de Calidad Certificada',
+      value: 'Multimarca',
+      label: 'Atención a camiones y semirremolques',
       surface: 'bg-gradient-to-br from-primary to-[#2b5d98]',
     },
   ];
@@ -44,30 +47,6 @@ const About = () => {
               Maestranza Montevideo S.A. ha consolidado su posición en el mercado chileno entregando soluciones de alta ingeniería para Compañías de Seguros Generales y empresas de transporte. 
               Nuestra vasta trayectoria nos permite abordar proyectos de reparación y fabricación con máxima seguridad y eficiencia.
             </p>
-            
-            {/* ISO Certification Badge */}
-            <div className="relative bg-white border border-primary/15 rounded-2xl shadow-sm p-4 sm:p-5 max-w-xl overflow-hidden">
-              <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-secondary to-primary" />
-              <div className="flex items-center gap-4">
-                <div className="h-14 w-14 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center flex-shrink-0 ml-2">
-                  <Award size={30} className="text-secondary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-primary">Certificación ISO 9001:2015</h4>
-                  <p className="text-sm text-gray-500">Gestión de calidad para procesos de manufactura y servicios de reparación.</p>
-                </div>
-              </div>
-
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="sm:col-span-2 bg-primary/5 border border-primary/10 rounded-xl px-3 py-2">
-                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">Entidad certificadora</p>
-                  <p className="text-sm text-gray-600 mt-0.5">Logo oficial pendiente de incorporación</p>
-                </div>
-                <div className="h-16 rounded-xl border border-dashed border-primary/30 bg-white flex items-center justify-center">
-                  <span className="text-xs text-primary/80 font-semibold">Logo aquí</span>
-                </div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right Side: Stats Grid */}
@@ -80,7 +59,7 @@ const About = () => {
           >
             {stats.map((stat, index) => (
               <motion.div
-                key={index}
+                key={stat.id}
                 whileHover={{ y: -8 }}
                 className={`${index === 2 ? 'sm:col-span-2' : ''} ${stat.surface} border border-gray-100 shadow-sm p-8 rounded-2xl flex flex-col items-center text-center space-y-3 transition-shadow hover:shadow-md`}
               >
