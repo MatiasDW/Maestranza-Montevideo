@@ -10,15 +10,16 @@ export const sendContactEmail = async (data) => {
   const TIMEOUT_MS = 8000;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
   console.log('[EmailService] Attempting to send email. Timeout:', TIMEOUT_MS / 1000, 's');
 
   try {
-    // Read variables securely with Vite env
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://api.mock.placeholder';
-    const isMock = endpoint.includes('api.mock.placeholder');
+    if (!endpoint) {
+      throw new Error('Falta configurar VITE_FORMSPREE_ENDPOINT en el entorno de despliegue.');
+    }
 
-    console.log('[EmailService] Target Endpoint:', isMock ? 'MOCK_SANDBOX' : endpoint);
+    console.log('[EmailService] Target Endpoint:', endpoint);
 
     // Simulate Network Request with Controller Signal
     const response = await fetch(endpoint, {

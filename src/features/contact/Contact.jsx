@@ -23,14 +23,15 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await submitForm(formData);
+    const isSubmitted = await submitForm(formData);
+
+    if (isSubmitted) {
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    }
   };
 
-  // Reset form inputs on success
   useEffect(() => {
     if (isSuccess) {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      // Auto-clear success message after 5 seconds to return to IDLE
       const timer = setTimeout(resetStatus, 5000);
       return () => clearTimeout(timer);
     }

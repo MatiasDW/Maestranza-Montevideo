@@ -19,6 +19,7 @@ export const useContactForm = () => {
       await sendContactEmail(formData);
 
       setStatus('SUCCESS');
+      return true;
       // Reset form usually handled by component level state if desired
     } catch (error) {
       // Structured logging
@@ -29,6 +30,7 @@ export const useContactForm = () => {
 
       setStatus('ERROR');
       setErrorMessage(error.message || 'Ocurrió un error inesperado al enviar el formulario.');
+      return false;
     }
   };
 

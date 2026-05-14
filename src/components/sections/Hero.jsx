@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { WHATSAPP_URL } from '../../config/contactLinks';
+import logo from '../../assets/logos/maestranza-montevideo.svg';
 
 const Hero = () => {
   return (
@@ -21,12 +22,14 @@ const Hero = () => {
             transition={{ delay: 0.15, duration: 0.5 }}
             className="mb-4"
           >
-            <svg viewBox="0 0 300 100" className="h-24 md:h-32 w-auto drop-shadow-2xl" fill="none">
-              <path d="M 0 0 L 300 0 L 300 68 L 150 92 L 0 68 Z" fill="#1a4375" />
-              <path d="M 12 64 L 150 85 L 288 64" stroke="white" strokeWidth="1.5" fill="none" opacity="0.6" />
-              <text x="150" y="34" textAnchor="middle" fill="white" fontSize="18" fontWeight="700" letterSpacing="3" fontFamily="Georgia, serif">MAESTRANZA</text>
-              <text x="150" y="62" textAnchor="middle" fill="white" fontSize="24" fontWeight="900" letterSpacing="2" fontFamily="Georgia, serif">MONTEVIDEO</text>
-            </svg>
+            <img
+              src={logo}
+              alt="Maestranza Montevideo"
+              className="h-24 md:h-32 lg:h-36 w-auto drop-shadow-2xl"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
           </motion.div>
 
           <span className="inline-block bg-white/10 text-gray-300 border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
